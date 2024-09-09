@@ -7,6 +7,13 @@
             Calculator calc = new Calculator();
             Action action = new Action(calc.Report);
             action.Invoke();//it also can be action();
+
+            Func<int,int,int> funcAdd = new Func<int,int,int>(calc.Add);
+            int a = 100;
+            int b = 200;
+
+            int result = funcAdd.Invoke(a, b);
+            Console.WriteLine(result);
         }
     }
 
