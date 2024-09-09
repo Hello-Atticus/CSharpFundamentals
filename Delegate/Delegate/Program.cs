@@ -1,5 +1,7 @@
 ﻿namespace Delegate
 {
+    //Define delegate
+    public delegate int CalcDelegate(int a, int b);
     internal class Program
     {
         static void Main(string[] args)
@@ -14,6 +16,10 @@
 
             int result = funcAdd.Invoke(a, b);
             Console.WriteLine(result);
+
+            CalcDelegate calcDelegateSub = new CalcDelegate(calc.Sub);
+            int c = calcDelegateSub.Invoke(a,b);
+            Console.WriteLine("Delegate:"+c);
         }
     }
 
